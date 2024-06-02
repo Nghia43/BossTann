@@ -1,0 +1,29 @@
+<div>
+  <mat-form-field>
+    <input matInput type="date" placeholder="Start Date" [(ngModel)]="startDate">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="date" placeholder="End Date" [(ngModel)]="endDate">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Group By" [(ngModel)]="groupBy">
+      <mat-option value="date">Date</mat-option>
+      <mat-option value="market">Market</mat-option>
+      <mat-option value="channel">Channel</mat-option>
+      <mat-option value="device">Device</mat-option>
+      <mat-option value="subid">SubID</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="API Key" [(ngModel)]="apiKey">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="fetchData()">Fetch Data</button>
+</div>
+
+<div *ngIf="data">
+  <mat-card *ngFor="let item of data">
+    <mat-card-content>
+      <pre>{{ item | json }}</pre>
+    </mat-card-content>
+  </mat-card>
+</div>

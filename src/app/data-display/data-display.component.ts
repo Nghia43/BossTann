@@ -23,7 +23,6 @@ export class DataDisplayComponent implements OnInit {
   endDate: string = '';
   groupBy: string = 'Chanel';
   timeZone: string = '';
-  apiKey: string = '';
 
   constructor(private dataService: DataService) { }
 
